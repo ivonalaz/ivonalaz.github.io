@@ -1,0 +1,145 @@
+<aside class="sidebar">
+
+  {% if page.id %}
+  <div class="widget widget-recent">
+    <h3 class="widget-title">Recent Posts</h3>
+    {% for post in site.posts limit:4 %}
+    {% if post.main == false %}
+    <div class="recent-posts">
+      {% if post.image %}
+      <div class="recent-header">
+        <a class="recent-image" href="{{ root_url }}{{ post.url | prepend: site.baseurl }}"
+          style="background-image: url({{"/img/" | prepend: site.baseurl | append: post.image}})"></a>
+      </div>
+      {% else %}
+      {% endif %}
+      <div class="recent-content">
+        <h6 class="recent-title"><a href="{{ root_url }}{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h6>
+        <div class="recent-date">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{post.date | date: "%B %-d, %Y"}}</time>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% else %}
+  {% endif %}
+
+  <!-- <div class="widget widget-social">
+    <h3 class="widget-title">Subscribe & Follow</h3>
+    <ul class="social-profiles list-reset">
+      {% if site.facebook %}
+      <li class="social-profiles-item">
+        <a href="{{ site.facebook }}" class="social-profiles-link"><i class="ion ion-logo-facebook"></i></a>
+      </li>
+      {% else %} {% endif %}
+
+      {% if site.twitter %}
+      <li class="social-profiles-item">
+        <a href="{{ site.twitter }}" class="social-profiles-link"><i class="ion ion-logo-twitter"></i></a>
+      </li>
+      {% else %} {% endif %}
+
+      {% if site.instagram %}
+      <li class="social-profiles-item">
+        <a href="{{ site.instagram }}" class="social-profiles-link"><i class="ion ion-logo-instagram"></i></a>
+      </li>
+      {% else %} {% endif %}
+
+      {% if site.pinterest %}
+      <li class="social-profiles-item">
+        <a href="{{ site.pinterest }}" class="social-profiles-link"><i class="ion ion-logo-pinterest"></i></a>
+      </li>
+      {% else %} {% endif %}
+    </ul>
+  </div> -->
+
+  <div class="widget widget-newsletter">
+    <h3 class="widget-title">Information</h3>
+    <div class="newsletter-subtitle">Trainings</div>
+    <div class="newsletter-text">Tuesday 19:00</div>
+    <div class="newsletter-text">Thursday 19:00</div>
+    <div class="newsletter-text">Saturday 18:00</div>
+    <!-- <form class="c-newsletter-form validate" action="{% if site.mailchimp %}//{{site.mailchimp}}{% else %}#{% endif %}"
+      method="POST" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+      <div class="newsletter-group">
+        <div class="newsletter-group-top">
+          <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+          <i class="email-icon ion ion-ios-mail"></i>
+          <input class="newsletter-email required email" id="mce-EMAIL" type="text" name="EMAIL" placeholder="E-mail">
+        </div>
+        <input class="newsletter-button" id="mc-embedded-subscribe" type="submit" name="subscribe" value="Subscribe">
+      </div>
+    </form> -->
+  </div>
+
+  <!-- {% if site.instafeed == true %}
+  <div class="widget widget-instagram">
+    <h3 class="widget-title">Instagram</h3>
+    <div class="instagram-box">
+      <ul id="instafeed" class="instagram-grid list-reset clearfix"></ul>
+      <a class="instagram-prof" href="#">&#64;UserName</a>
+    </div>
+  </div>
+  {% endif %} -->
+  <!-- {% if site.pictures == true %} -->
+  <div class="widget widget-instagram">
+    <h3 class="widget-title">Pictures</h3>
+    <div class="instagram-box">
+      <ul id="instafeed" class="instagram-grid list-reset clearfix">
+          {% for image in site.static_files %}
+          {% if image.path contains 'img/slider' && forloop.index < 7 %}
+          <li class="instagram-item"><a href="{{site.baseurl}}/pictures">
+            <img src="{{ site.baseurl }}{{ image.path }}">
+            </a>
+          </li>
+          {% endif %}
+		{% endfor %}
+        <!-- <li class="instagram-item"><a href="https://www.instagram.com/p/BosX1Dgn7qD/"
+            aria-label="📷Photo Credit - Oliver Hae, https://unsplash.com/photos/Q9uG_lSKWTQ" target="_blank"><img
+              src="//scontent.cdninstagram.com/vp/dea8bcc9c1bdb3e12d5fad13ace84374/5D4B5AD7/t51.2885-15/sh0.08/e35/s640x640/42367767_2368929153149604_1959458767939139798_n.jpg?_nc_ht=scontent.cdninstagram.com"
+              alt="📷Photo Credit - Oliver Hae, https://unsplash.com/photos/Q9uG_lSKWTQ"></a></li>
+        <li class="instagram-item"><a href="https://www.instagram.com/p/BosXrtFn9CX/"
+            aria-label="📷Photo Credit - Simone Hutsch, https://unsplash.com/photos/lY9b8ND1cs0" target="_blank"><img
+              src="//scontent.cdninstagram.com/vp/1bab52c1c0444822d93c0bbbf3e45567/5D367BDB/t51.2885-15/sh0.08/e35/s640x640/42068664_1904276609881336_47308803794183431_n.jpg?_nc_ht=scontent.cdninstagram.com"
+              alt="📷Photo Credit - Simone Hutsch, https://unsplash.com/photos/lY9b8ND1cs0"></a></li>
+        <li class="instagram-item"><a href="https://www.instagram.com/p/BosXfu4nVd1/"
+            aria-label="📷Photo Credit - Steven Roe, https://unsplash.com/photos/QEVSKXubV0s" target="_blank"><img
+              src="//scontent.cdninstagram.com/vp/d989efb71a58c80246b716813aa485e4/5D340424/t51.2885-15/sh0.08/e35/s640x640/42003110_406714169860741_7705834767214788227_n.jpg?_nc_ht=scontent.cdninstagram.com"
+              alt="📷Photo Credit - Steven Roe, https://unsplash.com/photos/QEVSKXubV0s"></a></li>
+        <li class="instagram-item"><a href="https://www.instagram.com/p/BosXXQ7nNLp/"
+            aria-label="📷Photo Credit - Markus Spiske, https://unsplash.com/photos/VUnpGweqXAM" target="_blank"><img
+              src="//scontent.cdninstagram.com/vp/acbde40476a2d138c5e6ce9dc604d703/5D2FC871/t51.2885-15/sh0.08/e35/s640x640/42161325_2161063470819981_5713304877303333372_n.jpg?_nc_ht=scontent.cdninstagram.com"
+              alt="📷Photo Credit - Markus Spiske, https://unsplash.com/photos/VUnpGweqXAM"></a></li>
+        <li class="instagram-item"><a href="https://www.instagram.com/p/BosXJkfHvQl/"
+            aria-label="📷Photo Credit - Simone Hurtz, https://unsplash.com/photos/peZOoWo1yhg" target="_blank"><img
+              src="//scontent.cdninstagram.com/vp/a8b9f420861de2aeadf733b13f2db147/5D46C943/t51.2885-15/sh0.08/e35/s640x640/42689731_1926750790952673_5777041404493916586_n.jpg?_nc_ht=scontent.cdninstagram.com"
+              alt="📷Photo Credit - Simone Hurtz, https://unsplash.com/photos/peZOoWo1yhg"></a></li>
+        <li class="instagram-item"><a href="https://www.instagram.com/p/BosWOEnHxSJ/" target="_blank">
+            <img
+              src="//scontent.cdninstagram.com/vp/3f77adeea2b91f4a77ace0f0f053d6b1/5D4474DB/t51.2885-15/sh0.08/e35/s640x640/43048738_308748973259274_3810957505968889591_n.jpg?_nc_ht=scontent.cdninstagram.com"
+              >
+            </a>
+          </li> -->
+      </ul>
+    </div>
+  </div>
+  <!-- {% endif %} -->
+
+  <div class="widget widget-tags">
+    <h3 class="widget-title">Anything else</h3>
+    <!-- {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{%
+    endcapture %} {% assign tag_words = site_tags | split:',' | sort %}
+    <ul class="tag-list list-reset">
+      {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+      {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+      <li class="tag-item"><a href="{{ site.baseurl }}/tags#{{ this_word | cgi_escape }}"
+          class="tag">{{ this_word }}</a></li>
+      {% endunless %}
+      {% endfor %}
+    </ul> -->
+  </div>
+
+</aside> <!-- /.sidebar -->
