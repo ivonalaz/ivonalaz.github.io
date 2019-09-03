@@ -8,7 +8,8 @@ layout: default
 		{% if post.main == true %}
 		<div class="col col-12">
 			<article class="article-first">
-				<div class="article-image-first" style="background-image: url({{"/img/" | prepend: site.baseurl | append : post.image}})">
+				<!-- <div class="article-image-first" style="background-image: url({{"/img/" | prepend: site.baseurl | append : post.image}})"> -->
+					<div class="article-image-first" style="background-image: url({{"/img/" | append : post.image}})"></div>
 					<div class="article-content-first">
 						<div class="article-tag">
 						{% if post.tags.size >= 1 %}
@@ -39,7 +40,8 @@ layout: default
 				<article class="article col col-12 col-t-6">
 					<div class="article-box">
 						<div class="article-head">
-							<a href="{{ post.url | prepend: site.baseurl }}" class="article-image" style="background-image: url({{"/img/" | prepend: site.baseurl | append : post.thumbnailImage}})">
+							<!-- <a href="{{ post.url | prepend: site.baseurl }}" class="article-image" style="background-image: url({{"/img/" | prepend: site.baseurl | append : post.thumbnailImage}})"> -->
+								<a href="{{ post.url | prepend: site.baseurl }}" class="article-image" style="background-image: url({{"/img/" | append : post.thumbnailImage}})"></a>
 								<!-- <div class="image-overlay">
 									<span class="image-overlay-text">{{post.title | slice: 0}}</span>
 								</div> -->
