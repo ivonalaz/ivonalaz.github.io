@@ -57,11 +57,18 @@
   </div> -->
 
   <div class="widget widget-newsletter">
-    <h3 class="widget-title">Information</h3>
-    <div class="newsletter-subtitle">Trainings</div>
-    <div class="newsletter-text">Tuesday 20:00</div>
-    <div class="newsletter-text">Thursday 20:00</div>
-    <div class="newsletter-text">Saturday 18:00</div>
+    <h3 class="widget-title">Информации</h3>
+    <div class="newsletter-subtitle">Тренинзи</div>
+    <div class="newsletter-subtitle">Деца</div>   
+    <div class="newsletter-text">Вторник 19:30</div>
+    <div class="newsletter-text">Четврток 19:30</div> 
+    <div class="newsletter-text">Сабота 18:00</div> 
+    
+    <div class="newsletter-subtitle">Возрасни</div>
+    <div class="newsletter-text">Вторник 18:30</div>
+    <div class="newsletter-text">Четврток 18:30</div>
+    <div class="newsletter-text">Сабота 18:00</div>
+    <div class="newsletter-text">Горно Кузман Јосифовски-Питу, Банско бб, Црниче. Контакт тел: 070 382 107</div>
     <!-- <form class="c-newsletter-form validate" action="{% if site.mailchimp %}//{{site.mailchimp}}{% else %}#{% endif %}"
       method="POST" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
       <div class="newsletter-group">
@@ -86,7 +93,7 @@
   {% endif %} -->
   <!-- {% if site.pictures == true %} -->
   <div class="widget widget-instagram">
-    <h3 class="widget-title">Pictures</h3>
+    <h3 class="widget-title">Слики</h3>
     <div class="instagram-box">
       <ul id="instafeed" class="instagram-grid list-reset clearfix">
           {% for image in site.static_files %}
@@ -128,8 +135,8 @@
   </div>
   <!-- {% endif %} -->
 
-  <div class="widget widget-tags">
-    <h3 class="widget-title">Anything else</h3>
+  <!-- <div class="widget widget-tags">
+    <h3 class="widget-title">Anything else</h3> -->
     <!-- {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{%
     endcapture %} {% assign tag_words = site_tags | split:',' | sort %}
     <ul class="tag-list list-reset">
@@ -140,6 +147,6 @@
       {% endunless %}
       {% endfor %}
     </ul> -->
-  </div>
+  <!-- </div> -->
 
 </aside> <!-- /.sidebar -->

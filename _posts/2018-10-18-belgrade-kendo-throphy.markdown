@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Belgrade Kendo Trophy
+title:  Блеград Кендо Трофеј
 date:   2018-10-12 16:03:00 +0300
 mainImage:  mainBelgrade.jpg
 thumbnailImage: thumbnailBelgrade.jpg

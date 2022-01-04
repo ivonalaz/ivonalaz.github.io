@@ -1,12 +1,11 @@
 ---
 layout: post
-title:  10th Balkan Kendo Cup
+title:  10то Балканско Првенство - Софија
 date:   2019-03-23 16:05:55 +0300
 thumbnailImage:  balkanskoThumbnail.jpg
 mainImage: balkanskoMain.jpg
 main: false
 tags:   
-
 ---
 
 Македонската кендо репрезентација се врати со 3 медали од 10-тото Балканско првенство кое се одржа викендов во Софија, Бугарија.

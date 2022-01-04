@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Nis Kendo Open
+title:  Ниш Кендо Опен
 date:   2019-03-10 16:04:00 +0300
 thumbnailImage:  nisThumbnail.jpg
 mainImage: nisMain.jpg

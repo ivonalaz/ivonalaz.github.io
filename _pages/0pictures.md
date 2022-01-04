@@ -1,6 +1,6 @@
 ---
 layout: pictures
-title: Pictures
+title: Слики
 permalink: /pictures/
 image: 11.jpg
 ---
